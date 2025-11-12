@@ -161,6 +161,13 @@ activate_reporter <- function(project_root = ".") {
   cat("✅ Switched to Reporter persona with analytical storytelling focus\n")
 }
 
+# Function to activate conference noter persona with minimal context
+activate_conference_noter <- function(project_root = ".") {
+  cat("🔄 Switching to Conference Noter persona...\n")
+  set_persona_with_autodetect("conference-noter", project_root)
+  cat("✅ Switched to Conference Noter persona for R+AI conference documentation\n")
+}
+
 # Function to activate default persona (minimal context)
 activate_default <- function(project_root = ".") {
   cat("🔄 Switching to Default persona...\n")
@@ -220,6 +227,7 @@ show_context_status <- function(project_root = ".") {
   cat("  activate_data_engineer()   - Data pipeline & quality specialist (minimal context)\n")
   cat("  activate_research_scientist() - Statistical analysis & methodology specialist (minimal context)\n")
   cat("  activate_devops_engineer() - Production deployment & operations specialist (minimal context)\n")
+  cat("  activate_conference_noter() - R+AI conference note enhancement (minimal context)\n")
   cat("  activate_project_manager() - Strategic oversight (full context)\n")
   cat("  activate_prompt_engineer() - RICECO framework specialist (specialized context)\n")
   cat("  activate_reporter()        - Analytical storytelling (on-demand context)\n")

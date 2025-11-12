@@ -114,6 +114,10 @@ get_persona_configs <- function() {
     "reporter" = list(
       file = get_persona_path("reporter.md"),
       default_context = c()
+    ),
+    "conference-noter" = list(
+      file = get_persona_path("conference-noter.md"),
+      default_context = c()
     )
   )
 }
@@ -626,6 +630,10 @@ activate_prompt_engineer <- function() {
 
 activate_reporter <- function() {
   set_persona_with_defaults("reporter")
+}
+
+activate_conference_noter <- function() {
+  set_persona_with_defaults("conference-noter")
 }
 
 # ==============================================================================

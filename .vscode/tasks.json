@@ -74,6 +74,18 @@
       "problemMatcher": []
     },
     {
+      "label": "Activate Conference Noter Persona",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "source('ai/scripts/ai-migration-toolkit.R'); activate_conference_noter(); show_context_status()"
+      ],
+      "group": "build",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
       "label": "Activate Project Manager Persona",
       "type": "process",
       "command": "Rscript",
