@@ -4,15 +4,13 @@ Describe the analytical approach, standards, and reproducibility guardrails for 
 
 ## Analytical Approach
 
-- Data ingestion and validation steps
-- Transformation and feature engineering principles
-- Modeling or inference strategies (if applicable)
-- Evaluation criteria and diagnostics
+- Semantic analysis
+- Knowledge and skil organization
+- Resource cataloging
 
 ## Reproducibility Standards
 
 - Version control of code and configuration
-- Random seed management (if randomness present)
 - Deterministic outputs where feasible
 - Clear environment setup instructions
 

@@ -4,29 +4,21 @@ Provide a clear, concise articulation of the project's purpose, target users, an
 
 ## Objectives
 
-- Establish a reusable scaffold for data analysis workflows.
-- Demonstrate AI-assisted context, persona, and memory integration.
-- Support rapid onboarding with minimal friction.
-- Maintain separation between portable logic and project-specific storage.
+- Create a knowledge system about R+AI 2025 conference
+- Help users learn about showcased projects and technologies
+- Compose analytical essays on these topics and assist in brainstorming
 
 ## Success Metrics
 
-- Time-to-first-successful analysis < 30 minutes.
-- Persona activation yields relevant guidance without manual edits.
-- Memory system captures decisions within normal workflow (<= 3 commands).
-- Context refresh operations complete < 2 seconds for core files.
+- library of annalytic essays 
+- 
 
-## Non-Goals
 
-- Domain-specific modeling guidance.
-- Heavy dependency management beyond base R/Python tooling.
-- Automated cloud deployment.
 
 ## Stakeholders
 
-- Data analysts: need reproducible templates.
-- Research engineers: need portable AI scaffolding.
-- Project managers: need visibility into mission/method/glossary.
+- Learners of data science and AI
+- R+AI 2025 conference attendees
 
 ---
 *Populate with project-specific mission statements before production use.*
