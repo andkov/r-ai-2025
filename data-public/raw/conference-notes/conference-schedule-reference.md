@@ -1,5 +1,7 @@
 # R+AI 2025 Conference Talk Schedule & File Templates
 
+https://rconsortium.github.io/RplusAI_website/program.html
+
 ## Day 1: Wednesday, November 12, 2025
 
 ### Completed

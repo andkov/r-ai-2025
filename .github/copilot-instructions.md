@@ -23,6 +23,7 @@ remove_context_file('project/mission') # Remove specific file
 list_available_md_files()              # Discover available files
 ```
 
+Event website: https://rconsortium.github.io/RplusAI_website/program.html
 ---
 
 <!-- SECTION 1: CORE AI INSTRUCTIONS -->
@@ -164,6 +165,8 @@ show_context_status()  # Current AI context state
 **Core Instructions Version**: 1.0.0  
 **Compatible with**: AI Support System v1.0.0  
 **Last Updated**: 2024-10-29
+
+https://rconsortium.github.io/RplusAI_website/program.html 
 
 <!-- SECTION 2: ACTIVE PERSONA -->
 

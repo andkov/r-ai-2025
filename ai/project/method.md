@@ -8,6 +8,9 @@ Describe the analytical approach, standards, and reproducibility guardrails for 
 - Knowledge and skil organization
 - Resource cataloging
 
+Scan the program of the R+AI 2025 conference to identify relevant talks and materials.
+https://rconsortium.github.io/RplusAI_website/program.html
+
 ## Reproducibility Standards
 
 - Version control of code and configuration
