@@ -144,6 +144,71 @@
       "group": "test",
       "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
       "problemMatcher": []
+    },
+    {
+      "label": "Add to Context (Interactive)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy", "Bypass",
+        "-File", "${workspaceFolder}/scripts/ps1/interactive-context-add.ps1"
+      ],
+      "group": "build",
+      "presentation": { 
+        "echo": false, 
+        "reveal": "always", 
+        "focus": true,
+        "panel": "dedicated" 
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Remove from Context (Interactive)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy", "Bypass",
+        "-File", "${workspaceFolder}/scripts/ps1/interactive-context-remove.ps1"
+      ],
+      "group": "build",
+      "presentation": { 
+        "echo": false, 
+        "reveal": "always", 
+        "focus": true,
+        "panel": "dedicated" 
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Start btw MCP Server",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "library(btw); cat('🚀 Starting btw MCP Server with', length(btw_tools()), 'tools...\\n'); btw_mcp_server()"
+      ],
+      "group": "build",
+      "isBackground": true,
+      "presentation": { 
+        "echo": true, 
+        "reveal": "always", 
+        "panel": "dedicated" 
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Test btw MCP Tools",
+      "type": "process",
+      "command": "Rscript",
+      "args": [
+        "-e",
+        "library(btw); cat('📊 Available btw tools:\\n'); print(btw_tools()); cat('\\n🔧 Example tools:\\n'); cat('- Environment:', length(grep('env_', btw_tools())), 'tools\\n'); cat('- Documentation:', length(grep('docs_', btw_tools())), 'tools\\n'); cat('- Files:', length(grep('files_', btw_tools())), 'tools\\n'); cat('- Git:', length(grep('git_', btw_tools())), 'tools\\n')"
+      ],
+      "group": "test",
+      "presentation": { "echo": true, "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
     }
   ]
 }

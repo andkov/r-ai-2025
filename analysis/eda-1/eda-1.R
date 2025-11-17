@@ -71,50 +71,6 @@ if (!fs::dir_exists(prints_folder)) {fs::dir_create(prints_folder)}
 
 # ---- load-data --------------------------------------
 
-# Connect to the default Books of Ukraine database using custom functions
-# Note: Using 'main' database which contains analysis-ready tables created by Ellis pipeline
-# Note: The complete optimized database (books + ua admin + extra) 
-# Note: wide tables (those with a _wide suffix) are good for getting to know the data, but tables (without _wide suffix) are better for analysis.
-db <- connect_books_db("main")  # connects to the final analytical database
-# now let's inspect what data tables are available in the database
-db_tables_all <- DBI::dbListTables(db)
-
-# Keep only tables that do NOT end with the `_wide` suffix (we'll import these)
-db_tables <- db_tables_all[!grepl("_wide$", db_tables_all)]
-
-# Read selected tables into a named list (tbls) and also assign sanitized names
-# into the global environment for convenience. This keeps the connection open
-# while we read data, then disconnects.
-message("Reading ", length(db_tables), " non-_wide tables from DB: ", paste(db_tables, collapse = ", "))
-tbls <- lapply(db_tables, function(t) {
-	message(" - ", t)
-	DBI::dbReadTable(db, t)
-})
-names(tbls) <- db_tables
-
-# helper to convert table names into safe R object names
-sanitize_name <- function(x) {
-	nm <- gsub("[^A-Za-z0-9_]+", "_", x)
-	nm <- gsub("^([0-9])", "_\\1", nm)
-	nm
-}
-
-# assign into global env using sanitized names
-for (nm in db_tables) {
-	obj_name <- sanitize_name(nm)
-	assign(obj_name, tbls[[nm]], envir = .GlobalEnv)
-}
-# Close the database connection
-DBI::dbDisconnect(db)
-
-# Print concise summary of loaded tables
-cat("📊 Loaded tables (name: rows):\n")
-for (nm in db_tables) {
-	df <- tbls[[nm]]
-	rows <- if (is.data.frame(df)) nrow(df) else NA
-	cat("   -", nm, ":", rows, "rows\n")
-}
-
 # ---- inspect-data -------------------------------------
 ds_year %>% glimpse()
 source("./scripts/silent-mini-eda.R")
@@ -129,3 +85,70 @@ silent_mini_eda("ds_year")
 # ---- inspect-data-2 -------------------------------------
 
 # ---- g1 -----------------------------------------------------
+# Explore mtcars dataset structure
+mtcars %>% glimpse()
+
+# Scatter plot: MPG vs Weight, colored by cylinders
+g1 <- mtcars %>% 
+  ggplot(aes(x = wt, y = mpg, color = factor(cyl), fill = factor(cyl))) +
+  stat_ellipse(geom = "polygon", alpha = 0.15, level = 0.95) +
+  geom_point(size = 5, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 1) +
+  labs(
+    title = "Fuel Efficiency vs Vehicle Weight",
+    subtitle = "Grouped by number of cylinders (95% confidence ellipses)",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Cylinders",
+    fill = "Cylinders"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    legend.position = "bottom"
+  )
+
+print(g1)
+
+# ---- g2 -----------------------------------------------------
+# Distribution of MPG by transmission type
+g2 <- mtcars %>% 
+  mutate(transmission = factor(am, labels = c("Automatic", "Manual"))) %>% 
+  ggplot(aes(x = transmission, y = mpg, fill = transmission)) +
+  geom_boxplot(alpha = 0.7) +
+  geom_jitter(width = 0.2, alpha = 0.4) +
+  labs(
+    title = "Fuel Efficiency by Transmission Type",
+    x = "Transmission",
+    y = "Miles per Gallon"
+  ) +
+  scale_fill_manual(values = c("Automatic" = "#E69F00", "Manual" = "#56B4E9")) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    legend.position = "none"
+  )
+
+print(g2)
+
+# ---- g3 -----------------------------------------------------
+# Horsepower vs Quarter Mile Time
+g3 <- mtcars %>% 
+  ggplot(aes(x = hp, y = qsec, size = wt, color = factor(cyl))) +
+  geom_point(alpha = 0.6) +
+  labs(
+    title = "Performance: Horsepower vs Quarter Mile Time",
+    subtitle = "Bubble size represents vehicle weight",
+    x = "Horsepower",
+    y = "Quarter Mile Time (seconds)",
+    color = "Cylinders",
+    size = "Weight"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    legend.position = "right"
+  )
+
+print(g3)
+
