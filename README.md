@@ -1,131 +1,150 @@
-# Quick Start Template for AI-Augmented Reproducible Research
+# R+AI 2025 Conference Knowledge Base
 
-> [No one beginning a data science project should start from a blinking cursor.](https://towardsdatascience.com/better-collaborative-data-science-d2006b9c0d39) <br/>...Templatization is a best practice for things like using common directory structure across projects...<br/> -[Megan Risdal](https://towardsdatascience.com/@meganrisdal) Kaggle Product Lead.
+A comprehensive repository documenting insights, tools, and technologies from the R+AI 2025 conference (November 12-13, 2025). This resource serves as both a learning platform for R and AI integration and a practical guide for implementing cutting-edge R+LLM workflows.
 
-This template provides a comprehensive foundation for **AI-augmented reproducible research projects**. It combines the best practices of reproducible research with cutting-edge AI support infrastructure, enabling researchers to leverage AI assistance while maintaining scientific rigor.
+## 🎯 What You'll Find Here
 
-## 🚀 **What's New: AI Support System v1.0.0**
+This repository transforms 18 session notes from the R+AI 2025 conference into actionable knowledge for data scientists, researchers, and R practitioners interested in AI augmentation.
 
-This template now includes a **complete AI Support System** with:
+### 📊 **Core Resources**
+- **Session Notes** - Detailed summaries of all 18 conference presentations
+- **Strategic Analysis** - Top 5  insights ranked by importance  
+- **Technical Catalog** - 50+ R packages and tools with installation guides
+- **Action Items** - Prioritized roadmap for implementing conference discoveries
 
-- **🎭 12 Specialized AI Personas** - Expert assistants for different research roles (Developer, Data Engineer, Research Scientist, etc.)
-- **🧠 Intelligent Memory System** - Maintains project context and decision history
-- **🔄 Dynamic Context Management** - Seamless switching between AI assistants based on your current needs
-- **🧪 Comprehensive Testing** - Validation framework ensuring system reliability
-- **📋 VSCode Integration** - One-click access to AI personas and project tools
+### 🚀 **Key Discoveries**
 
-## 🎯 **Perfect For**
+The conference revealed critical gaps and opportunities in the R+AI ecosystem:
 
-- **Mixed-language research projects** (R, Python, SQL, etc.)
-- **Reproducible data analysis** with AI augmentation
-- **Collaborative research teams** needing consistent AI assistance
-- **Academic and government research** where reproducibility is critical
-- **Projects requiring multiple analytical perspectives** (technical, strategic, domain-specific)
+- **R lacks native LLM orchestration** (no LangChain equivalent) - but solutions are emerging
+- **btw + VSCode integration** makes GitHub Copilot genuinely R-aware for the first time
+- **Traditional ML still dominates structured data** - GBMs outperform LLMs significantly
+- **Proper statistical methodology** is essential for reliable LLM evaluation
+- **Multi-agent systems with judge functions** provide systematic quality control
 
-# 🚀 Quick Start Guide
+---
 
-## Step 1: Standard Setup
+## 🔗 Quick Navigation
 
-1. **Install Prerequisites**
-   - [R (4.0+)](https://cran.r-project.org/)
-   - [RStudio](https://rstudio.com/products/rstudio/) or [VS Code](https://code.visualstudio.com/)
-   - [Git](https://git-scm.com/)
-   - [Quarto](https://quarto.org/) (for reports)
+### 📈 **Strategic Insights**
+- **[Top 5 Ideas](./data-public/derived/artefacts/top-ideas.md)** - Most strategically important discoveries
+- **[Follow-Up Actions](./data-public/derived/artefacts/follow-up.md)** - Prioritized implementation roadmap
+- **[Package Index](./data-public/derived/artefacts/package-index.md)** - Comprehensive tool catalog with rankings
 
-2. **Clone and Open Project**
-   ```bash
-   git clone [your-repo-url]
-   cd quick-start-template
-   ```
-   - Open `quick-start-template.Rproj` in RStudio, or
-   - Open folder in VS Code
+### 📝 **Session Notes** 
+Individual session summaries available in [`./data-public/derived/notes-summary/`](./data-public/derived/notes-summary/):
 
-3. **Install R Dependencies**
-   ```r
-   # In R console
-   install.packages(c("yaml", "config", "jsonlite"))
-   ```
+**Day 1 Sessions:**
+- [1-01: Joe Cheng Keynote](./data-public/derived/notes-summary/1-01-cheng-keynote.md) - Three responsibility frameworks for LLM integration
+- [1-02: Jasmine Daly](./data-public/derived/notes-summary/1-02-daly-me-myself-claude.md) - Consulting practice transformation with AI
+- [1-03: Jonathan Pearce](./data-public/derived/notes-summary/1-03-pearce-reviving-forgotten-code.md) - AI-assisted code archaeology
+- [1-04: Garrick Aden-Buie](./data-public/derived/notes-summary/1-04-aden-buie-tools-llms-humans-r.md) - **🔥 btw + VSCode integration**
+- [1-05: Aga Rucki](./data-public/derived/notes-summary/1-05-rucki-better-r-ai-assistant.md) - Professional R coding assistant
+- [1-06: Mohamed El Fodil Ihaddaden](./data-public/derived/notes-summary/1-06-ihaddaden-mini007-framework.md) - Multi-agent orchestration
+- [1-07: Max Kuhn](./data-public/derived/notes-summary/1-07-kuhn-analyzing-llm-evaluations.md) - **Statistical rigor for LLM evaluation**
+- [1-08: André Charlon](./data-public/derived/notes-summary/1-08-charlon-biomedical-ontology-embeddings.md) - Biomedical knowledge graphs
+- [1-09: Umair Durrani](./data-public/derived/notes-summary/1-09-durrani-brand-docs-apps-ggplots.md) - RAG-enhanced creativity
 
-## Step 2: AI Support System Setup
+**Day 2 Sessions:**
+- [2-01: Ben Maxwell](./data-public/derived/notes-summary/2-01-maxwell-geodl-geospatial.md) - Geospatial deep learning
+- [2-02: Russell Conte](./data-public/derived/notes-summary/2-02-conte-deep-learning-records.md) - Automated ensemble modeling
+- [2-03: Szilard Pafka](./data-public/derived/notes-summary/2-03-pafka-gbms-llms-chatgpt.md) - **GBMs vs LLMs performance comparison**
+- [2-04: Xu Fei](./data-public/derived/notes-summary/2-04-fei-tracking-evolution-r-python-genai.md) - R+Python GenAI evolution
+- [2-05: Frank Hull](./data-public/derived/notes-summary/2-05-hull-kuzco-computer-vision.md) - LLM-based computer vision
+- [2-06: Troy Hernandez](./data-public/derived/notes-summary/2-06-hernandez-stable-diffusion-r.md) - Pure R generative AI
+- [2-07: Selene Muñoz](./data-public/derived/notes-summary/2-07-munoz-cancerclarity-app.md) - Clinical decision support
+- [2-08: Mark Hornick & Sherry LaMonica](./data-public/derived/notes-summary/2-08-hornick-lamonica-rag-database.md) - Database-native RAG
+- [2-09: Workshop](./data-public/derived/notes-summary/2-09-pastoor-fei-kumar-workshop.md) - Practical R+AI implementation
 
-4. **Initialize AI System**
-   - **In VS Code**: `Ctrl+Shift+P` → "Tasks: Run Task" → "Show AI Context Status"
-   - **In R Console**: 
-   ```r
-   source('ai/scripts/ai-migration-toolkit.R')
-   show_context_status()
-   ```
+---
 
-5. **Customize Your Project**
-   - Edit `ai/mission.md` - Define your research goals
-   - Edit `ai/method.md` - Describe your methodology  
-   - Edit `ai/glossary.md` - Add domain-specific terms
-   - Update `config.yml` - Set project-specific configurations
 
-6. **Test the System**
-   - **In VS Code**: Run "Test AI Support System" task
-   - **In R Console**: 
-   ```r
-   source('ai/scripts/tests/run-all-tests.R')
-   ```
+## 💡 Key Takeaways
 
-## 🎭 Using AI Personas
+### 🔧 **Technical Infrastructure**
+- **btw** provides first production-ready R+LLM integration with 40+ specialized tools
+- **ellmer** offers universal LLM interface supporting 16+ providers
+- **mini007** enables multi-agent orchestration with quality control via judge functions
+- **vitals** brings proper statistical methodology to LLM evaluation
 
-The template includes 11 specialized AI personas, each optimized for different research tasks:
+### 📊 **Strategic Insights**  
+- R ecosystem is rapidly catching up to Python for GenAI workflows
+- Integration beats isolation - best solutions combine tools strategically
+- Statistical foundations remain crucial in the AI era
+- Traditional ML (GBMs) still dominates structured data tasks
 
-### **Core Personas**
-- **🔧 Developer** - Technical infrastructure and reproducible code
-- **📊 Project Manager** - Strategic oversight and coordination
-- **🔬 Research Scientist** - Statistical analysis and methodology
+### 🛠 **Practical Applications**
+- btw + VSCode = First truly R-aware AI development environment
+- Judge-based multi-agent systems provide systematic quality assurance  
+- Database-native RAG eliminates vector database complexity
+- Proper experimental design essential for reliable LLM comparisons
 
-### **Specialized Personas**  
-- **⚡ Data Engineer** - Data pipelines and quality assurance
-- **🚀 DevOps Engineer** - Deployment and operational excellence
-- **🎨 Frontend Architect** - User interfaces and visualization
-- **💡 Prompt Engineer** - AI optimization and prompt design
-- **📝 Reporter** - Analysis communication and storytelling
+---
 
-### **Quick Persona Switching**
+## 📋 Repository Structure
 
-**In VS Code:**
-- `Ctrl+Shift+P` → "Tasks: Run Task" → "Activate [Persona Name] Persona"
-
-**In R Console:**
-```r
-source('ai/scripts/ai-migration-toolkit.R')
-
-# Technical focus (minimal context)
-activate_developer()
-
-# Strategic oversight (full project context)  
-activate_project_manager()
-
-# Data-focused analysis
-activate_data_engineer()
-
-# Statistical methodology
-activate_research_scientist()
+```
+├── data-public/derived/
+│   ├── artefacts/           # Synthesized insights and catalogs
+│   │   ├── top-ideas.md     # 🌟 5 most important discoveries
+│   │   ├── follow-up.md     # 📋 Prioritized action roadmap  
+│   │   └── package-index.md # 📦 50+ tools with install guides
+│   └── notes-summary/       # Individual session summaries (18 files)
+├── ai/                      # AI support system for this project
+├── analysis/                # Analytical workflows and templates
+└── guides/                  # Usage guides and documentation
 ```
 
-## 🧠 Memory System
+---
 
-The template includes an intelligent memory system that maintains project continuity:
+## 🤝 Who Should Use This
 
-- **`ai/memory-human.md`** - Your decisions and reasoning
-- **`ai/memory-ai.md`** - AI-maintained technical status  
-- **`ai/memory-hub.md`** - Navigation center
-- **`ai/memory-guide.md`** - Usage instructions
+### **Data Scientists & Analysts**
+- Integrate AI assistance into R workflows effectively
+- Understand when to use LLMs vs traditional ML approaches
+- Implement proper evaluation frameworks for AI systems
 
-### **Memory Commands**
-```r
-# Check memory status
-source('ai/scripts/ai-memory-functions.R')
-memory_status()
+### **R Package Developers**
+- Explore cutting-edge R+AI integration patterns
+- Study production-ready examples (btw, ellmer, mini007)
+- Understand MCP (Model Context Protocol) for tool integration
 
-# Quick memory check with intent detection
-ai_memory_check()
-```
+### **Research Scientists**
+- Apply rigorous statistical methodology to LLM evaluation
+- Implement reproducible AI-augmented research workflows
+- Balance AI assistance with scientific rigor requirements
 
-## 📋 Project Structure
+### **Consultants & Practitioners**
+- Transform practice with strategic AI integration
+- Implement right-sized enterprise AI infrastructure
+- Adopt manager-developer mental models for AI collaboration
 
-This template follows reproducible research best practices:
+---
+
+## 🔗 Essential Links
+
+### **Must-Install Packages**
+- **[btw](https://github.com/posit-dev/btw)** - R+LLM integration toolkit
+- **[ellmer](https://ellmer.tidyverse.org/)** - Universal LLM interface  
+- **[mini007](https://cran.r-project.org/package=mini007)** - Multi-agent orchestration
+- **[vitals](https://vitals.tidyverse.org/)** - LLM evaluation framework
+
+### **Key Resources**
+- **Conference Program**: [R+AI 2025](https://rconsortium.github.io/RplusAI_website/program.html)
+- **Statistical Methodology**: [Max Kuhn's Presentation](https://topepo.github.io/2025-r-ai/)
+- **Consulting Insights**: [Me, Myself, and Claude](https://dalyanalytics.github.io/me-myself-claude-talk/)
+
+---
+
+## 📊 Project Status
+
+**Conference**: R+AI 2025 (November 12-13, 2025)  
+**Analysis Completed**: November 14, 2025  
+**Sessions Documented**: 18 of 18  
+**Total Pages**: 100+ pages of structured insights  
+
+This knowledge base represents comprehensive coverage of the R+AI 2025 conference, transformed into actionable guidance for implementing AI-augmented R workflows in research and practice.
+
+---
+
+*Created by conference participants for the R+AI community. All session notes based on live conference attendance and real-time documentation.*
